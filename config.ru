@@ -18,7 +18,10 @@ class Test
   end
 
   def render(body)
-    [200, {'content-type' => 'text/html'}, [header, body, footer]]
+    [200, {
+      'content-type' => 'text/html',
+      'X-Frame-Options' => 'ALLOWALL'
+    }, [header, body, footer]]
   end
 
   def header
